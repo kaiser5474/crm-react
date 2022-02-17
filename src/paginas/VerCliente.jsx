@@ -8,7 +8,7 @@ const VerCliente = () => {
   //hooks
   const [cliente, setCliente] = useState({});
 
-//destrunturing
+  //destrunturing
   const { nombre, empresa, email, telefono, notas, id } = cliente;
 
   const handleRead = async () => {
@@ -37,42 +37,36 @@ const VerCliente = () => {
         {nombre}
       </div>
       <div className="mb-3">
-        <span className="text-gray-700 font-bold text-xl">
-          Empresa:{" "}
-        </span>{empresa}
-        
+        <span className="text-gray-700 font-bold text-xl">Empresa: </span>
+        {empresa}
       </div>
       <div className="mb-3">
-        <span className="text-gray-700 font-bold text-xl">
-          Email:{" "}
-        </span>{email}
+        <span className="text-gray-700 font-bold text-xl">Email: </span>
+        {email}
       </div>
       <div className="mb-3">
-        <span className="text-gray-700 font-bold text-xl">
-          Teléfono:{" "}
-        </span>{telefono}
+        <span className="text-gray-700 font-bold text-xl">Teléfono: </span>
+        {telefono}
       </div>
       <div className="mb-3">
-        <span className="text-gray-700 font-bold text-xl">
-          Notas:{" "}
-        </span>
-        {notas}        
+        <span className="text-gray-700 font-bold text-xl">Notas: </span>
+        {notas}
       </div>
       <div className="text-right mt-40">
-          <button
-            className="bg-blue-600 hover:bg-blue-700 p-2 mr-1 text-white font-bold uppercase rounded-md w-1/4"
-            type="button"
-            onClick={() => navigate(`../editar/${id}`)}
-          >
-            Edit
-          </button>
-          <button
-            className="bg-red-600 hover:bg-red-700 p-2 mr-1 text-white font-bold uppercase rounded-md w-1/4"
-            type="button"
-          >
-            Delete
-          </button>
-        </div>
+        <button
+          className="bg-blue-600 hover:bg-blue-700 p-2 mr-1 text-white font-bold uppercase rounded-md w-1/4"
+          type="button"
+          onClick={() => navigate(`../editar/${id}`)}
+        >
+          Edit
+        </button>
+        <button
+          className="bg-red-600 hover:bg-red-700 p-2 mr-1 text-white font-bold uppercase rounded-md w-1/4"
+          type="button"
+        >
+          Delete
+        </button>
+      </div>
     </>
   );
 };
