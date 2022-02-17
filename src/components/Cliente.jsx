@@ -20,19 +20,20 @@ const Cliente = ({ cliente }) => {
         <td>{empresa}</td>
         <td className="text-center">
           <button
-            className="bg-blue-600 hover:bg-blue-700 p-2 mr-0.5 text-white font-bold uppercase rounded-md text-xs"
+            className="bg-blue-600 hover:bg-blue-700 p-2 mr-0.5 text-white font-bold uppercase rounded-md text-xs w-full mb-0.5"
             type="button"
+            onClick={() => navigate(`/clientes/editar/${id}`)}
           >
             Edit
           </button>
           <button
-            className="bg-red-600 hover:bg-red-700 p-2 mr-0.5 text-white font-bold uppercase rounded-md text-xs"
+            className="bg-red-600 hover:bg-red-700 p-2 mr-0.5 text-white font-bold uppercase rounded-md text-xs w-full mb-0.5"
             type="button"
           >
             Delete
           </button>
           <button
-            className="bg-yellow-500 hover:bg-yellow-600 p-2 mr-0.5 text-white font-bold uppercase rounded-md text-xs"
+            className="bg-yellow-500 hover:bg-yellow-600 p-2 mr-0.5 text-white font-bold uppercase rounded-md text-xs w-full mb-0.5"
             type="button"
             onClick={() => navigate(`/clientes/${id}`)}
           >

@@ -3,22 +3,35 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Error from "./Error";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
-const Formulario = () => {
+const Formulario = ({ children, cliente, cargando }) => {
   const navigate = useNavigate();
   const handleOnSubmit = async (values) => {
     try {
-      const url = "http://localhost:5000/clientes";
-      const respuesta = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(values),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const resultado = await   respuesta.json();
-      console.log(resultado);
-      navigate("/clientes");
+      if (cliente.id) {
+        //Editando un registro
+        const url = `http://localhost:5000/clientes/${cliente.id}`;
+        const respuesta = await fetch(url, {
+          method: "PUT",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        navigate("/clientes");
+      } else {
+        //Nuevo Registro
+        const url = "http://localhost:5000/clientes";
+        const respuesta = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(values),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        navigate("/clientes");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -37,19 +50,22 @@ const Formulario = () => {
       .integer("Número no valido")
       .required("El telefono es obligatorio"),
   });
-  return (
+  return cargando ? (
+    <Spinner />
+  ) : (
     <div className="bg-white mt-10 py-10 px-5 md:w-4/5 mx-auto rounded-md shadow-md">
       <h1 className="text-gray-600 font-bold text-xl uppercase text-center">
-        Agregar cliente
+        {children}
       </h1>
       <Formik
         initialValues={{
-          nombre: "",
-          empresa: "",
-          email: "",
-          telefono: "",
-          notas: "",
+          nombre: cliente?.nombre ?? "",
+          empresa: cliente?.empresa ?? "",
+          email: cliente?.email ?? "",
+          telefono: cliente?.telefono ?? "",
+          notas: cliente?.notas ?? "",
         }}
+        enableReinitialize={true}
         onSubmit={async (values, { resetForm }) => {
           await handleOnSubmit(values);
           resetForm();
@@ -134,7 +150,7 @@ const Formulario = () => {
               </div>
               <input
                 type="submit"
-                value="Agregar Cliente"
+                value={children}
                 className="w-full text-lg bg-blue-900 shadow-md px-10 py-2 rounded-md text-white font-bold hover:bg-blue-700 uppercase"
               />
             </Form>
@@ -143,6 +159,11 @@ const Formulario = () => {
       </Formik>
     </div>
   );
+};
+
+Formulario.defaultProps = {
+  cliente: {},
+  cargando: false,
 };
 
 export default Formulario;

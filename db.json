@@ -1,7 +1,7 @@
 {
   "clientes": [
     {
-      "nombre": "Jarvis Miranda",
+      "nombre": "Jarvis Miranda Guerra",
       "empresa": "Desainfo",
       "email": "jarvismiranda728096@gmail.com",
       "telefono": "0991682860",
@@ -9,8 +9,8 @@
       "id": 2
     },
     {
-      "nombre": "Jarvis Miranda",
-      "empresa": "Desainfo",
+      "nombre": "Jarvis Miranda Guerra",
+      "empresa": "Desainfo S.A",
       "email": "jarvismiranda728096@gmail.com",
       "telefono": "0991682860",
       "notas": "Insertando primer cliente",
@@ -31,6 +31,14 @@
       "telefono": "0991682860",
       "notas": "Prueba",
       "id": 5
+    },
+    {
+      "nombre": "Jeisy Miranda",
+      "empresa": "Miranda Room´s",
+      "email": "jeisy@gmail.com",
+      "telefono": "53702330",
+      "notas": "Sacando licencia de los perros",
+      "id": 6
     }
   ],
   "comments": [
