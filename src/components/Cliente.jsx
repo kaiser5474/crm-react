@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 const Cliente = ({ cliente, handleDelete }) => {
+  const baseUrl = import.meta.env.VITE_API_URL;
   const navigate = useNavigate();
   const { nombre, email, empresa, telefono, notas, id } = cliente;
   return (

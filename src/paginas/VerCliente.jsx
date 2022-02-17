@@ -16,7 +16,7 @@ const VerCliente = () => {
   const handleRead = async () => {
     try {
       setCargando(!cargando);
-      const url = `http://localhost:5000/clientes/${idParam}`;
+      const url = `${import.meta.env.VITE_API_URL}/${idParam}`;
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
       setCliente(resultado);
@@ -29,7 +29,7 @@ const VerCliente = () => {
   const handleDelete = async () => {
     if (confirm("Desea eliminar el cliente")) {
       try {
-        const url = `http://localhost:5000/clientes/${idParam}`;
+        const url = `${import.meta.env.VITE_API_URL}/${idParam}`;
         const respuesta = await fetch(url, {
           method: "DELETE",
         });
