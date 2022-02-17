@@ -1,11 +1,6 @@
 {
   "clientes": [
     {
-      "id": 1,
-      "nombre": "Jarvis",
-      "apellido": "Miranda"
-    },
-    {
       "nombre": "Jarvis Miranda",
       "empresa": "Desainfo",
       "email": "jarvismiranda728096@gmail.com",
