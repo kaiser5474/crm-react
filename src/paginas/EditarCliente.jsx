@@ -1,7 +1,6 @@
 import React from "react";
 
-const EditarCliente = ({ id }) => {
-  console.log(id);
+const EditarCliente = () => {
   return <div>EditarCliente</div>;
 };
 
