@@ -1,44 +1,12 @@
 {
   "clientes": [
     {
-      "nombre": "Jarvis Miranda Guerra",
-      "empresa": "Desainfo",
-      "email": "jarvismiranda728096@gmail.com",
-      "telefono": "0991682860",
-      "notas": "Insertando primer cliente",
-      "id": 2
-    },
-    {
-      "nombre": "Jarvis Miranda Guerra",
+      "nombre": "Jarvis Miranda",
       "empresa": "Desainfo S.A",
       "email": "jarvismiranda728096@gmail.com",
       "telefono": "0991682860",
-      "notas": "Insertando primer cliente",
-      "id": 3
-    },
-    {
-      "nombre": "Yulianela Rodriguez",
-      "empresa": "Salud.sa",
-      "email": "yulirv@gmail.com",
-      "telefono": "0991682860",
-      "notas": "Compra de curso de fotografia",
-      "id": 4
-    },
-    {
-      "nombre": "Jarvis Miranda",
-      "empresa": "Desainfo",
-      "email": "jarvismiranda728096@gmail.com",
-      "telefono": "0991682860",
-      "notas": "Prueba",
-      "id": 5
-    },
-    {
-      "nombre": "Jeisy Miranda",
-      "empresa": "Miranda Room´s",
-      "email": "jeisy@gmail.com",
-      "telefono": "53702330",
-      "notas": "Sacando licencia de los perros",
-      "id": 6
+      "notas": "Buscando empleo en React",
+      "id": 1
     }
   ],
   "comments": [
