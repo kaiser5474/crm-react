@@ -26,6 +26,21 @@ const VerCliente = () => {
     setCargando(false);
   };
 
+  const handleDelete = async () => {
+    if (confirm("Desea eliminar el cliente")) {
+      try {
+        const url = `http://localhost:5000/clientes/${idParam}`;
+        const respuesta = await fetch(url, {
+          method: "DELETE",
+        });
+        await respuesta.json();
+        navigate("/clientes");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   useEffect(() => {
     handleRead();
   }, []);
@@ -81,6 +96,7 @@ const VerCliente = () => {
                 <button
                   className="bg-red-600 hover:bg-red-700 p-2 mr-1 text-white font-bold uppercase rounded-md w-1/4"
                   type="button"
+                  onClick={() => handleDelete()}
                 >
                   Delete
                 </button>
