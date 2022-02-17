@@ -2,10 +2,26 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import Error from "./Error";
+import { useNavigate } from "react-router-dom";
 
 const Formulario = () => {
-  const handleOnSubmit = (values) => {
-    console.log(values);
+  const navigate = useNavigate();
+  const handleOnSubmit = async (values) => {
+    try {
+      const url = "http://localhost:5000/clientes";
+      const respuesta = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const resultado = await   respuesta.json();
+      console.log(resultado);
+      navigate("/clientes");
+    } catch (error) {
+      console.log(error);
+    }
   };
   const nuevoClienteSchema = Yup.object().shape({
     nombre: Yup.string()
@@ -20,7 +36,6 @@ const Formulario = () => {
       .positive("Número no valido")
       .integer("Número no valido")
       .required("El telefono es obligatorio"),
-    notas: "",
   });
   return (
     <div className="bg-white mt-10 py-10 px-5 md:w-4/5 mx-auto rounded-md shadow-md">
@@ -35,8 +50,9 @@ const Formulario = () => {
           telefono: "",
           notas: "",
         }}
-        onSubmit={(values) => {
-          handleOnSubmit(values);
+        onSubmit={async (values, { resetForm }) => {
+          await handleOnSubmit(values);
+          resetForm();
         }}
         validationSchema={nuevoClienteSchema}
       >
@@ -113,7 +129,7 @@ const Formulario = () => {
                   name="notas"
                   className="w-full mt-2 bg-gray-50 p-3 block h-32"
                   type="text"
-                  placeholder="Notas del cliente"
+                  placeholder="Notas del cliente (opcional)"
                 />
               </div>
               <input

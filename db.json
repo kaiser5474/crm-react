@@ -1,15 +1,47 @@
 {
-  "posts": [
+  "clientes": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "nombre": "Jarvis",
+      "apellido": "Miranda"
+    },
+    {
+      "nombre": "Jarvis Miranda",
+      "empresa": "Desainfo",
+      "email": "jarvismiranda728096@gmail.com",
+      "telefono": "0991682860",
+      "notas": "Insertando primer cliente",
+      "id": 2
+    },
+    {
+      "nombre": "Jarvis Miranda",
+      "empresa": "Desainfo",
+      "email": "jarvismiranda728096@gmail.com",
+      "telefono": "0991682860",
+      "notas": "Insertando primer cliente",
+      "id": 3
+    },
+    {
+      "nombre": "Yulianela Rodriguez",
+      "empresa": "Salud.sa",
+      "email": "yulirv@gmail.com",
+      "telefono": "0991682860",
+      "notas": "Compra de curso de fotografia",
+      "id": 4
+    },
+    {
+      "nombre": "Jarvis Miranda",
+      "empresa": "Desainfo",
+      "email": "jarvismiranda728096@gmail.com",
+      "telefono": "0991682860",
+      "notas": "Prueba",
+      "id": 5
     }
   ],
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
+      "body": "some ddd comment",
       "postId": 1
     }
   ],
